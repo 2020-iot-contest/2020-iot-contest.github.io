@@ -7,16 +7,16 @@
   
   <title>数据传输协议</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cmd_add_machine     cmd_add_machine     描述     该主题包含控制端对后台下达的“添加机器”指令。后台收到该指令后，会登记此机器id，并订阅相关主题。后台通过cmd_ret主题返回是否成功。     消息实例     { &quot;cmd_id&quot;: &quot;7a4Z2piq&quot;, &quot;machine_id&quot;: &quot;5Q4D1qwe&quot; }          字段">
+  <meta name="description" content="cmdret     cmdret     描述     该主题包含后台执行控制端的指令后的返回值。所有指令的返回值共享此主题。     消息实例     { &quot;cmd_id&quot;: &quot;7a4Z2piq&quot;, &quot;success&quot;: true, &quot;output&quot;: &quot;Machine 5Q4D1qwe added.&quot; }          字段     cmd_id：指令id，每次调用指令都">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据传输协议">
-<meta property="og:url" content="http://example.com/2020/10/30/topics/cmd_add_machine/index.html">
+<meta property="og:url" content="http://example.com/topics/cmdret/index.html">
 <meta property="og:site_name" content="数据传输协议">
-<meta property="og:description" content="cmd_add_machine     cmd_add_machine     描述     该主题包含控制端对后台下达的“添加机器”指令。后台收到该指令后，会登记此机器id，并订阅相关主题。后台通过cmd_ret主题返回是否成功。     消息实例     { &quot;cmd_id&quot;: &quot;7a4Z2piq&quot;, &quot;machine_id&quot;: &quot;5Q4D1qwe&quot; }          字段">
+<meta property="og:description" content="cmdret     cmdret     描述     该主题包含后台执行控制端的指令后的返回值。所有指令的返回值共享此主题。     消息实例     { &quot;cmd_id&quot;: &quot;7a4Z2piq&quot;, &quot;success&quot;: true, &quot;output&quot;: &quot;Machine 5Q4D1qwe added.&quot; }          字段     cmd_id：指令id，每次调用指令都">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-30T12:08:48.156Z">
-<meta property="article:modified_time" content="2020-10-29T15:24:33.622Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:published_time" content="2020-10-30T12:08:48.143Z">
+<meta property="article:modified_time" content="2020-10-29T15:32:05.052Z">
+<meta property="article:author" content="binary-song">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="数据传输协议" type="application/atom+xml">
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-topics/cmd_add_machine" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-topics/cmdret" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/10/30/topics/cmd_add_machine/" class="article-date">
-  <time datetime="2020-10-30T12:08:48.156Z" itemprop="datePublished">2020-10-30</time>
+    <a href="/topics/cmdret/" class="article-date">
+  <time datetime="2020-10-30T12:08:48.143Z" itemprop="datePublished">2020-10-30</time>
 </a>
     
   </div>
@@ -82,23 +82,24 @@
 <link rel="stylesheet" href="../style.css" />
 
 <body>
-    <title>cmd_add_machine</title>
-    <h1>cmd_add_machine</h1>
+    <title>cmdret</title>
+    <h1>cmdret</h1>
     <h2>描述</h2>
-    <p>该主题包含控制端对后台下达的“添加机器”指令。后台收到该指令后，会登记此机器id，并订阅相关主题。后台通过cmd_ret主题返回是否成功。</p>
+    <p>该主题包含后台执行控制端的指令后的返回值。所有指令的返回值共享此主题。</p>
     <h2>消息实例</h2>
-    <p>{ "cmd_id": "7a4Z2piq", "machine_id": "5Q4D1qwe" }
+    <p>{ "cmd_id": "7a4Z2piq", "success": true, "output": "Machine 5Q4D1qwe added." }
     </p>
     <h2>字段</h2>
     <p>cmd_id：指令id，每次调用指令都应当使用不同的id，以便在返回时区分是哪条指令的返回值。 </p>
-    <p>machine_id：欲添加机器的id。</p>
+    <p>success：指令执行是否成功。</p>
+    <p>output：指令的输出。</p>
 </body>
 
 </html>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/30/topics/cmd_add_machine/" data-id="ckgw8cc2r0001pkxt294ueudo" class="article-share-link">Share</a>
+      <a data-url="http://example.com/topics/cmdret/" data-id="ckgw8cc2u0003pkxt5xzxawve" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,7 +108,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/10/30/topics/cmd_add_tourist/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/topics/cmd_add_machine/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -117,7 +118,7 @@
     </a>
   
   
-    <a href="/2020/10/30/topics/cmdret/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/index/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title"></div>
     </a>
@@ -156,23 +157,23 @@
       <ul>
         
           <li>
-            <a href="/2020/10/30/topics/rqst_val_acc/">(no title)</a>
+            <a href="/topics/rqst_val_acc/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/10/30/topics/rply_val_acc/">(no title)</a>
+            <a href="/topics/rply_val_acc/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/10/30/topics/cmd_add_tourist/">(no title)</a>
+            <a href="/topics/cmd_add_tourist/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/10/30/topics/cmd_add_machine/">(no title)</a>
+            <a href="/topics/cmd_add_machine/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/10/30/topics/cmdret/">(no title)</a>
+            <a href="/topics/cmdret/">(no title)</a>
           </li>
         
       </ul>
@@ -187,7 +188,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
+      &copy; 2020 binary-song<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
