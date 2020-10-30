@@ -7,15 +7,15 @@
   
   <title>数据传输协议</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据传输协议     数据传输协议     version 3.0     数据流向     协议的用户由闸机、后台和控制端三种身份的用户组成。     在系统投入使用前，控制端应向后台发送“注册闸机”和“注册游客id”的指令。后台只会处理已注册闸机的请求，同时只认定已注册的游客id为合法。后台会输出指令的执行结果。          在系统正式使用时，闸机取得游客的体温和存放在他">
+  <meta name="description" content=".macro {         color: crimson;     }             数据传输协议     数据传输协议     version 3.0     数据流向     协议的用户由闸机、后台和控制端三种身份的用户组成。     在系统投入使用前，控制端应向后台发送“注册闸机”和“注册游客id”的指令。后台只会处理已注册闸机的请求，同时只认定已">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据传输协议">
 <meta property="og:url" content="https://2020-iot-contest.github.io/index/index.html">
 <meta property="og:site_name" content="数据传输协议">
-<meta property="og:description" content="数据传输协议     数据传输协议     version 3.0     数据流向     协议的用户由闸机、后台和控制端三种身份的用户组成。     在系统投入使用前，控制端应向后台发送“注册闸机”和“注册游客id”的指令。后台只会处理已注册闸机的请求，同时只认定已注册的游客id为合法。后台会输出指令的执行结果。          在系统正式使用时，闸机取得游客的体温和存放在他">
+<meta property="og:description" content=".macro {         color: crimson;     }             数据传输协议     数据传输协议     version 3.0     数据流向     协议的用户由闸机、后台和控制端三种身份的用户组成。     在系统投入使用前，控制端应向后台发送“注册闸机”和“注册游客id”的指令。后台只会处理已注册闸机的请求，同时只认定已">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-30T12:07:12.640Z">
-<meta property="article:modified_time" content="2020-10-30T12:54:57.720Z">
+<meta property="article:modified_time" content="2020-10-30T13:21:22.666Z">
 <meta property="article:author" content="binary-song">
 <meta name="twitter:card" content="summary">
   
@@ -78,7 +78,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <html>
+        <html>    
+    <style type="text/CSS">
+    .macro {
+        color: crimson;
+    }
+    </style>
 <link rel="stylesheet" href="./style.css" />
 
 <body>
@@ -115,6 +120,7 @@
     <p>以下是连接到MQTT Broker服务器的必要信息。此账号由闸机、后台和控制端共用。</p>
     <p>IP：124.70.155.130<br>端口：1883<br>用户名：user1<br>密码：helloworld</p>
     <h2>主题索引</h2>
+    <p>下面是每个主题的详细说明。红色字是宏，需要用实际值替换（见详细说明）。</p>
     <table>
         <tr>
             <td>主题</td>
@@ -184,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/index/" data-id="ckgw9exw90000h4xt00poeolf" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/index/" data-id="ckgwadhuj0000u4xt7n746qfj" class="article-share-link">Share</a>
       
       
     </footer>
