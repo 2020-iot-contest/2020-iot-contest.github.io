@@ -5,17 +5,17 @@
   
 
   
-  <title>Hexo</title>
+  <title>数据传输协议</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="数据传输协议">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="数据传输协议">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="数据传输协议" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -36,7 +36,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">数据传输协议</a>
       </h1>
       
     </div>
@@ -63,6 +63,223 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-topics/rqst_val_acc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/30/topics/rqst_val_acc/" class="article-date">
+  <time datetime="2020-10-30T12:08:48.161Z" itemprop="datePublished">2020-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <html>
+<link rel="stylesheet" href="../style.css" />
+
+<body>
+    <title>rqst_val_acc_machine_id</title>
+    <h1>rqst_val_acc_<span class="macro">machine_id</span></h1>
+    <h2>描述</h2>
+    <p>该主题包含id为<span class="macro">machine_id</span>的闸机发出的"验证通行（validate access）"请求。要求验证某位游客是否可以通过。</p>
+    <h2>消息实例</h2>
+    <p>{ "tourist_id": "o39gjdu9xu", "body_temp": 36.8 }
+    </p>
+    <h2>字段</h2>
+    <p>tourist_id：游客的id。</p>
+    <p>body_temp：游客的体温。</p>
+</body>
+
+</html>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/30/topics/rqst_val_acc/" data-id="ckgw8cc2w0005pkxt91no4t1y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-topics/rply_val_acc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/30/topics/rply_val_acc/" class="article-date">
+  <time datetime="2020-10-30T12:08:48.159Z" itemprop="datePublished">2020-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <html>
+<link rel="stylesheet" href="../style.css" />
+
+<body>
+    <title>rply_val_acc_machine_id</title>
+    <h1>rply_val_acc_<span class="macro">machine_id</span></h1>
+    <h2>描述</h2>
+    <p>该主题包含后台对id为<span class="macro">machine_id</span>的闸机发出的"验证通行（validate access）"请求的回复。</p>
+    <h2>消息实例</h2>
+    <p>{ "tourist_id": "o39gjdu9xu", "status": "granted", "error_code": 0 }
+    </p>
+    <h2>字段</h2>
+    <p>tourist_id：游客的id。</p>
+    <p>status：验证结果，可能的值：
+        <li>"granted"：允许通过</li>
+        <li>"invalid_id"：拒绝通过，非法的令牌UUID</li>
+        <li>"high_temp"：拒绝通过，体温过高</li>
+    </p>
+    <p>error_code：参见
+        <a href="../index.html">后台错误代码</a></p>
+</body>
+
+</html>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/30/topics/rply_val_acc/" data-id="ckgw8cc2u0004pkxtaiy5269n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-topics/cmd_add_tourist" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/30/topics/cmd_add_tourist/" class="article-date">
+  <time datetime="2020-10-30T12:08:48.158Z" itemprop="datePublished">2020-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <html>
+<link rel="stylesheet" href="../style.css" />
+
+<body>
+    <title>cmd_add_tourist</title>
+    <h1>cmd_add_tourist</h1>
+    <h2>描述</h2>
+    <p>该主题包含控制端对后台下达的“添加游客”指令。后台收到该指令后，会登记此游客id。后台通过cmd_ret主题返回是否成功。</p>
+    <h2>消息实例</h2>
+    <p>{ "cmd_id": "8ywkl01d", "tourist_id": "o39gjdu9xu" }
+    </p>
+    <h2>字段</h2>
+    <p>cmd_id：指令id，每次调用指令都应当使用不同的id，以便在返回时区分是哪条指令的返回值。 </p>
+    <p>tourist_id：游客的id。</p>
+</body>
+
+</html>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/30/topics/cmd_add_tourist/" data-id="ckgw8cc2t0002pkxtd910bewe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-topics/cmd_add_machine" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/30/topics/cmd_add_machine/" class="article-date">
+  <time datetime="2020-10-30T12:08:48.156Z" itemprop="datePublished">2020-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <html>
+<link rel="stylesheet" href="../style.css" />
+
+<body>
+    <title>cmd_add_machine</title>
+    <h1>cmd_add_machine</h1>
+    <h2>描述</h2>
+    <p>该主题包含控制端对后台下达的“添加机器”指令。后台收到该指令后，会登记此机器id，并订阅相关主题。后台通过cmd_ret主题返回是否成功。</p>
+    <h2>消息实例</h2>
+    <p>{ "cmd_id": "7a4Z2piq", "machine_id": "5Q4D1qwe" }
+    </p>
+    <h2>字段</h2>
+    <p>cmd_id：指令id，每次调用指令都应当使用不同的id，以便在返回时区分是哪条指令的返回值。 </p>
+    <p>machine_id：欲添加机器的id。</p>
+</body>
+
+</html>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/30/topics/cmd_add_machine/" data-id="ckgw8cc2r0001pkxt294ueudo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-topics/cmdret" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/30/topics/cmdret/" class="article-date">
+  <time datetime="2020-10-30T12:08:48.143Z" itemprop="datePublished">2020-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <html>
+<link rel="stylesheet" href="../style.css" />
+
+<body>
+    <title>cmdret</title>
+    <h1>cmdret</h1>
+    <h2>描述</h2>
+    <p>该主题包含后台执行控制端的指令后的返回值。所有指令的返回值共享此主题。</p>
+    <h2>消息实例</h2>
+    <p>{ "cmd_id": "7a4Z2piq", "success": true, "output": "Machine 5Q4D1qwe added." }
+    </p>
+    <h2>字段</h2>
+    <p>cmd_id：指令id，每次调用指令都应当使用不同的id，以便在返回时区分是哪条指令的返回值。 </p>
+    <p>success：指令执行是否成功。</p>
+    <p>output：指令的输出。</p>
+</body>
+
+</html>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/30/topics/cmdret/" data-id="ckgw8cc2u0003pkxt5xzxawve" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-index" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -182,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/30/index/" data-id="ckgw7pamb0000pkxtfusy9q4s" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/30/index/" data-id="ckgw8cc2m0000pkxt8kh598jw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,7 +440,23 @@
       <ul>
         
           <li>
-            <a href="/2020/10/30/index/">(no title)</a>
+            <a href="/2020/10/30/topics/rqst_val_acc/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/30/topics/rply_val_acc/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/30/topics/cmd_add_tourist/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/30/topics/cmd_add_machine/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/30/topics/cmdret/">(no title)</a>
           </li>
         
       </ul>
