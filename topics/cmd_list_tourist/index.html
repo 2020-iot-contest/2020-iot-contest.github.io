@@ -7,15 +7,15 @@
   
   <title>数据传输协议</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content=".macro {             color: crimson;         }             rqst_val_acc_machine_id     rqst_val_acc_machine_id     宏     machine_id 替换为 闸机的id。     描述     该主题包含id为machine_id的闸机发出的&quot;验证通行（va">
+  <meta name="description" content=".macro {             color: crimson;         }             cmd_list_tourist     cmd_list_tourist      描述     列出所有登记的游客id。后台通过cmd_ret主题返回是否成功。     消息实例     {&quot;cmd_id&quot;: &quot;47960&quot;}          字段">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据传输协议">
-<meta property="og:url" content="https://2020-iot-contest.github.io/topics/rqst_val_acc/index.html">
+<meta property="og:url" content="https://2020-iot-contest.github.io/topics/cmd_list_tourist/index.html">
 <meta property="og:site_name" content="数据传输协议">
-<meta property="og:description" content=".macro {             color: crimson;         }             rqst_val_acc_machine_id     rqst_val_acc_machine_id     宏     machine_id 替换为 闸机的id。     描述     该主题包含id为machine_id的闸机发出的&quot;验证通行（va">
+<meta property="og:description" content=".macro {             color: crimson;         }             cmd_list_tourist     cmd_list_tourist      描述     列出所有登记的游客id。后台通过cmd_ret主题返回是否成功。     消息实例     {&quot;cmd_id&quot;: &quot;47960&quot;}          字段">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-30T12:08:48.161Z">
-<meta property="article:modified_time" content="2020-11-06T10:50:34.616Z">
+<meta property="article:published_time" content="2020-11-06T11:12:58.950Z">
+<meta property="article:modified_time" content="2020-11-06T11:17:05.050Z">
 <meta property="article:author" content="binary-song">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-topics/rqst_val_acc" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-topics/cmd_list_tourist" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/topics/rqst_val_acc/" class="article-date">
-  <time datetime="2020-10-30T12:08:48.161Z" itemprop="datePublished">2020-10-30</time>
+    <a href="/topics/cmd_list_tourist/" class="article-date">
+  <time datetime="2020-11-06T11:12:58.950Z" itemprop="datePublished">2020-11-06</time>
 </a>
     
   </div>
@@ -87,25 +87,27 @@
 <link rel="stylesheet" href="../style.css" />
 
 <body>
-    <title>rqst_val_acc_machine_id</title>
-    <h1>rqst_val_acc_<span class="macro">machine_id</span></h1>
-    <h2>宏</h2>
-    <p><span class="macro">machine_id</span> 替换为 <span class="macro">闸机的id。</span></p>
+    <title>cmd_list_tourist</title>
+    <h1>cmd_list_tourist</h1>
+
     <h2>描述</h2>
-    <p>该主题包含id为<span class="macro">machine_id</span>的闸机发出的"验证通行（validate access）"请求。要求验证某位游客是否可以通过。</p>
+    <p>列出所有登记的游客id。后台通过cmd_ret主题返回是否成功。</p>
     <h2>消息实例</h2>
-    <p>{ "tourist_id": "19475", "body_temp": 36.8 }
+    <p>{"cmd_id": "47960"}
     </p>
     <h2>字段</h2>
-    <p>tourist_id：游客的id。字符串型。</p>
-    <p>body_temp：游客的体温。浮点数型。</p>
+    <p>cmd_id：指令id，每次调用指令都应当使用不同的id，以便在返回时区分是哪条指令的返回值。字符串型。 </p>
+
+    <h2>返回</h2>
+    <p>返回的"output"字段是一个字符串。它是一个JSON列表，列表的元素都是闸机id字符串。例：</p>
+    <p>{"cmd_id":"47960","success":true,"output":"["02eqa","2e1eq"]"}</p>
 </body>
 
 </html>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/topics/rqst_val_acc/" data-id="ckh661scj0007j4xt7uikfsl4" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/topics/cmd_list_tourist/" data-id="ckh661sci0005j4xt338damxs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -114,7 +116,7 @@
     
 <nav id="article-nav">
   
-    <a href="/topics/cmd_list_machine/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/topics/cmd_clear_machine/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -124,7 +126,7 @@
     </a>
   
   
-    <a href="/topics/rply_val_acc/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/topics/cmd_list_machine/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title"></div>
     </a>

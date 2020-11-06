@@ -7,15 +7,15 @@
   
   <title>数据传输协议</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content=".macro {         color: crimson;     }             数据传输协议     数据传输协议     version 3.0     数据流向     协议的用户由闸机、后台和控制端三种身份的用户组成。     在系统投入使用前，控制端应向后台发送“注册闸机”和“注册游客id”的指令。后台只会处理已注册闸机的请求，同时只认定已">
+  <meta name="description" content=".macro {         color: crimson;     }             数据传输协议     数据传输协议     version 3.0     数据流向      协议的用户有闸机、后台和控制端三种。      控制端的任务是向后台登记和注销闸机id和用户id。后台不会响应未登记的闸机发出的请求，也不会允许未登记的游客通过闸机。有必要的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据传输协议">
 <meta property="og:url" content="https://2020-iot-contest.github.io/index/index.html">
 <meta property="og:site_name" content="数据传输协议">
-<meta property="og:description" content=".macro {         color: crimson;     }             数据传输协议     数据传输协议     version 3.0     数据流向     协议的用户由闸机、后台和控制端三种身份的用户组成。     在系统投入使用前，控制端应向后台发送“注册闸机”和“注册游客id”的指令。后台只会处理已注册闸机的请求，同时只认定已">
+<meta property="og:description" content=".macro {         color: crimson;     }             数据传输协议     数据传输协议     version 3.0     数据流向      协议的用户有闸机、后台和控制端三种。      控制端的任务是向后台登记和注销闸机id和用户id。后台不会响应未登记的闸机发出的请求，也不会允许未登记的游客通过闸机。有必要的">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-30T12:07:12.640Z">
-<meta property="article:modified_time" content="2020-10-30T13:33:12.681Z">
+<meta property="article:modified_time" content="2020-11-06T11:01:44.535Z">
 <meta property="article:author" content="binary-song">
 <meta name="twitter:card" content="summary">
   
@@ -91,23 +91,29 @@
     <h1>数据传输协议</h1>
     <p>version 3.0</p>
     <h2>数据流向</h2>
-    <p>协议的用户由闸机、后台和控制端三种身份的用户组成。</p>
-    <p>在系统投入使用前，控制端应向后台发送“注册闸机”和“注册游客id”的指令。后台只会处理已注册闸机的请求，同时只认定已注册的游客id为合法。后台会输出指令的执行结果。
-    </p>
-    <p>在系统正式使用时，闸机取得游客的体温和存放在他芯片上的id，并请求后台判断id是否合法、体温是否正常。后台返回判断结果。</p>
-    <p>综上，数据有四种流向：</p>
+
+    <p>协议的用户有闸机、后台和控制端三种。</p>
+
+    <p>控制端的任务是向后台登记和注销闸机id和用户id。后台不会响应未登记的闸机发出的请求，也不会允许未登记的游客通过闸机。有必要的话，控制端也可以订阅其他主题，以监视系统的运作情况。</p>
+
+    <p>闸机的任务是取得游客的id和体温，游客的id存放在他的芯片中。闸机将这些信息发送给后台，后台判断该游客是否可以进入，并返回结果给闸机。注意，在此之前控制端必须登记此闸机id，否则后台不会响应。</p>
+
+    <p>后台的任务是处理控制端和闸机的指令和请求，并一一作出回应。</p>
+
+    <p>数据主要有四种流向：</p>
     <ul>
-        <li>闸机向后台发送请求（rqst）</li>
-        <li>后台向闸机回复请求（rply）</li>
-        <li>控制端向后台发送命令（cmd）</li>
-        <li>后台向控制端返回输出（cmdret）</li>
+        <li>从闸机到后台，称为<b>请求</b>（rqst）</li>
+        <li>从后台到闸机，称为<b>回复</b>（rply）</li>
+        <li>从控制端到后台，称为<b>指令</b>（cmd）</li>
+        <li>从后台到控制端，称为<b>指令返回</b>（cmdret）</li>
     </ul>
-    <p>每种流向都有对应的主题供相关方订阅和发布。</p>
+    
+    <p>每种流向都有对应的主题，括号中的是主题名称的前缀。</p>
     <h2>MQTT协议设置</h2>
     <h3>服务质量（QoS）</h3>
     <p> 绝大部分通信依赖“正好一次”级别的服务质量。即QoS=2。</p>
     <h3>消息负载（payload）格式</h3>
-    <p>使用JSON格式。每个主题都规定了消息负载的格式，并给出了示例。</p>
+    <p>使用JSON格式。每个主题都规定了消息负载的格式（由示例即可确定）。请关注示例中字段的类型。</p>
     <h3>ID</h3>
     <p>如无特殊说明，所有种类的id不限制长度，但只能由字母或数字组成。</p>
     <h4>闸机id</h4>
@@ -120,7 +126,7 @@
     <p>以下是连接到MQTT Broker服务器的必要信息。此账号由闸机、后台和控制端共用。</p>
     <p>IP：124.70.155.130<br>端口：1883<br>用户名：user1<br>密码：helloworld</p>
     <h2>主题索引</h2>
-    <p>下面是每个主题的详细说明。<span class="macro">红色字</span>是宏，需要用实际值替换（见详细说明）。</p>
+    <p>下面是每个主题的详细说明。<span class="macro">红色字</span>是宏，需要用实际值替换（见其说明）。</p>
     <table>
         <tr>
             <td>主题</td>
@@ -130,32 +136,32 @@
         </tr>
         <tr>
             <td>rqst_val_acc_<span class="macro">machine_id</span></td> 
-            <td><a href="https://2020-iot-contest.github.io/topics/rqst_val_acc">说明</a></td>
+            <td><a href="https://2020-iot-contest.github.io/topics/rqst_val_acc">链接</a></td>
             <td>闸机</td>
             <td>后台</td>
         </tr>
         <tr>
             <td>rply_val_acc_<span class="macro">machine_id</span></td>
             <td>
-                <a href="https://2020-iot-contest.github.io/topics/rply_val_acc">说明</a></td>
+                <a href="https://2020-iot-contest.github.io/topics/rply_val_acc">链接</a></td>
             <td>后台</td>
             <td>闸机</td>
         </tr>
         <tr>
             <td>cmd_add_machine</td>
-            <td><a href="https://2020-iot-contest.github.io/topics/cmd_add_machine">说明</a></td>
+            <td><a href="https://2020-iot-contest.github.io/topics/cmd_add_machine">链接</a></td>
             <td>控制端</td>
             <td>后台</td>
         </tr>
         <tr>
             <td>cmd_add_tourist</td>
-            <td><a href="https://2020-iot-contest.github.io/topics/cmd_add_tourist">说明</a></td>
+            <td><a href="https://2020-iot-contest.github.io/topics/cmd_add_tourist">链接</a></td>
             <td>控制端</td>
             <td>后台</td>
         </tr>
         <tr>
             <td>cmdret</td>
-            <td><a href="https://2020-iot-contest.github.io/topics/cmdret">说明</a></td>
+            <td><a href="https://2020-iot-contest.github.io/topics/cmdret">链接</a></td>
             <td>后台</td>
             <td>控制端</td>
         </tr>
@@ -184,13 +190,15 @@
             <td>无法解析提供的JSON消息。</td>
         </tr>
     </table>
-</body>
-
+    <p>例如，当后台返回如下信息时，应该视为发生错误，"tourist_id"和"status"的值均无效。</p>
+    <p>{ "tourist_id": "tEsTtOuRiSt", "status": "granted", "error_code": 1 }
+    </p>
+</body> 
 </html>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/index/" data-id="ckgwb139d00015oxtgaoq0y0k" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/index/" data-id="ckh661scg0002j4xtdr2w1a1k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -230,7 +238,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
     </div>
   </div>
 
@@ -243,23 +251,23 @@
       <ul>
         
           <li>
+            <a href="/topics/cmd_clear_tourist/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/topics/cmd_clear_machine/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/topics/cmd_list_tourist/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/topics/cmd_list_machine/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/topics/rqst_val_acc/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/topics/rply_val_acc/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/topics/cmd_add_tourist/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/topics/cmd_add_machine/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/topics/cmdret/">(no title)</a>
           </li>
         
       </ul>
