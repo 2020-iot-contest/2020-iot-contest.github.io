@@ -64,6 +64,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-topics/cmd_dump" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/topics/cmd_dump/" class="article-date">
+  <time datetime="2020-11-09T10:36:56.687Z" itemprop="datePublished">2020-11-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+<html>
+    <style type="text/CSS">
+        .macro {
+            color: crimson;
+        }
+    </style>
+<link rel="stylesheet" href="../style.css" />
+
+<body>
+    <title>cmd_dump</title>
+    <h1>cmd_dump</h1>
+
+    <h2>描述</h2>
+    <p>列出指定游客的记录。后台通过cmdret主题返回是否成功。</p>
+    <h2>消息实例</h2>
+    <p>{"cmd_id": "49856", "tourist_id":"8e6sf"}
+    </p>
+    <h2>字段</h2>
+    <p>cmd_id：指令id，每次调用指令都应当使用不同的id，以便在返回时区分是哪条指令的返回值。字符串型。 </p>
+    <p>tourist_id：游客id，字符串型。 </p>
+
+    <h2>返回</h2>
+    <p>返回值（见cmdret）的"output"字段是一个字符串。它是一个JSON列表，列表的元素都是一次出行请求记录。例：</p>
+    <p>
+        {"cmd_id": "49856", "success": true, "output": "[{"time": "2020-11-09 18:00:00", "status": "granted", "machine_id": "lke21"},{"time": "2020-11-09 20:00:00", "status": "granted", "machine_id": "lke21"}]"}
+        </p>
+    <p>上例表示此游客在18:00和20:00各有1次通行请求。</p>
+</body>
+
+</html>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://2020-iot-contest.github.io/topics/cmd_dump/" data-id="ckhaf9wyd0005y0xt885bg611" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-topics/cmd_clear_tourist" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/topics/cmd_clear_tourist/" class="article-date">
@@ -102,7 +158,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/topics/cmd_clear_tourist/" data-id="ckh66aoky0004cgxtedxy0ylx" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/topics/cmd_clear_tourist/" data-id="ckhaf9wyd0004y0xtc27xaayb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -150,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/topics/cmd_clear_machine/" data-id="ckh66aoky0003cgxte62phrht" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/topics/cmd_clear_machine/" data-id="ckhaf9wyc0003y0xthzusbvbi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -185,7 +241,7 @@
     <h1>cmd_list_tourist</h1>
 
     <h2>描述</h2>
-    <p>列出所有登记的游客id。后台通过cmd_ret主题返回是否成功。</p>
+    <p>列出所有登记的游客id。后台通过cmdret主题返回是否成功。</p>
     <h2>消息实例</h2>
     <p>{"cmd_id": "47960"}
     </p>
@@ -193,7 +249,7 @@
     <p>cmd_id：指令id，每次调用指令都应当使用不同的id，以便在返回时区分是哪条指令的返回值。字符串型。 </p>
 
     <h2>返回</h2>
-    <p>返回的"output"字段是一个字符串。它是一个JSON列表，列表的元素都是闸机id字符串。例：</p>
+    <p>返回值（见cmdret）的"output"字段是一个字符串。它是一个JSON列表，列表的元素都是闸机id字符串。例：</p>
     <p>{"cmd_id":"47960","success":true,"output":"["02eqa","2e1eq"]"}</p>
 </body>
 
@@ -201,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/topics/cmd_list_tourist/" data-id="ckh66aol00006cgxtguvgbfc7" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/topics/cmd_list_tourist/" data-id="ckhaf9wyf0007y0xt6shl010r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -236,7 +292,7 @@
     <h1>cmd_list_machine</h1>
 
     <h2>描述</h2>
-    <p>列出所有登记的闸机id。后台通过cmd_ret主题返回是否成功。</p>
+    <p>列出所有登记的闸机id。后台通过cmdret主题返回是否成功。</p>
     <h2>消息实例</h2>
     <p>{"cmd_id": "24661"}
     </p>
@@ -244,7 +300,7 @@
     <p>cmd_id：指令id，每次调用指令都应当使用不同的id，以便在返回时区分是哪条指令的返回值。字符串型。 </p>
 
     <h2>返回</h2>
-    <p>返回的"output"字段是一个字符串。它是一个JSON列表，列表的元素都是闸机id字符串。例：</p>
+    <p>返回值（见cmdret）的"output"字段是一个字符串。它是一个JSON列表，列表的元素都是闸机id字符串。例：</p>
     <p>{"cmd_id":"24661","success":true,"output":"["14a65","c61sq","pt201"]"}</p>
 </body>
 
@@ -252,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/topics/cmd_list_machine/" data-id="ckh66aokz0005cgxt4pm50ibe" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/topics/cmd_list_machine/" data-id="ckhaf9wye0006y0xt4rdzcemw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -301,7 +357,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/topics/rqst_val_acc/" data-id="ckh66aol20009cgxtcucccbwg" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/topics/rqst_val_acc/" data-id="ckhaf9wyh000ay0xtddo812ex" class="article-share-link">Share</a>
       
       
     </footer>
@@ -355,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/topics/rply_val_acc/" data-id="ckh66aol10008cgxtgfelht34" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/topics/rply_val_acc/" data-id="ckhaf9wyg0009y0xt2b8x5onr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -403,7 +459,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/topics/cmd_add_tourist/" data-id="ckh66aokx0002cgxt38743cjx" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/topics/cmd_add_tourist/" data-id="ckhaf9wyb0002y0xt0bsc8k03" class="article-share-link">Share</a>
       
       
     </footer>
@@ -450,7 +506,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/topics/cmd_add_machine/" data-id="ckh66aokv0001cgxt2hkkd28f" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/topics/cmd_add_machine/" data-id="ckhaf9wya0001y0xt852wcboa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -498,173 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/topics/cmdret/" data-id="ckh66aol00007cgxtg5ztbwqh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-index" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/index/" class="article-date">
-  <time datetime="2020-10-30T12:07:12.640Z" itemprop="datePublished">2020-10-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html>    
-    <style type="text/CSS">
-    .macro {
-        color: crimson;
-    }
-    </style>
-<link rel="stylesheet" href="./style.css" />
-
-<body>
-    <title>数据传输协议</title>
-    <h1>数据传输协议</h1>
-    <p>version 3.0</p>
-    <h2>数据流向</h2>
-
-    <p>协议的用户有闸机、后台和控制端三种。</p>
-
-    <p>控制端的任务是向后台登记和注销闸机id和用户id。后台不会响应未登记的闸机发出的请求，也不会允许未登记的游客通过闸机。有必要的话，控制端也可以订阅其他主题，以监视系统的运作情况。</p>
-
-    <p>闸机的任务是取得游客的id和体温，游客的id存放在他的芯片中。闸机将这些信息发送给后台，后台判断该游客是否可以进入，并返回结果给闸机。注意，在此之前控制端必须登记此闸机id，否则后台不会响应。</p>
-
-    <p>后台的任务是处理控制端和闸机的指令和请求，并一一作出回应。</p>
-
-    <p>数据主要有四种流向：</p>
-    <ul>
-        <li>从闸机到后台，称为<b>请求</b>（rqst）</li>
-        <li>从后台到闸机，称为<b>回复</b>（rply）</li>
-        <li>从控制端到后台，称为<b>指令</b>（cmd）</li>
-        <li>从后台到控制端，称为<b>指令返回</b>（cmdret）</li>
-    </ul>
-    
-    <p>每种流向都有对应的主题，括号中的是主题名称的前缀。</p>
-    <h2>MQTT协议设置</h2>
-    <h3>服务质量（QoS）</h3>
-    <p> 绝大部分通信依赖“正好一次”级别的服务质量。即QoS=2。</p>
-    <h3>消息负载（payload）格式</h3>
-    <p>使用JSON格式。每个主题都规定了消息负载的格式（由示例即可确定）。请关注示例中字段的类型。</p>
-    <h3>ID</h3>
-    <p>如无特殊说明，所有种类的id不限制长度，但只能由字母或数字组成。</p>
-    <h4>闸机id</h4>
-    <p>每台闸机都有自己的唯一标识符（machine_id）。只有登记过的闸机才能与后台交互。</p>
-    <h4>游客id</h4>
-    <p>游客的id存放在其随身携带的超高频芯片中。只有登记过的游客id才合法。</p>
-    <h4>指令id</h4>
-    <p>控制端向后台发送指令时，会包含一个id。后台返回指令结果时，也会附带同样的id。以此来区分结果属于哪条指令。</p>
-    <h3>MQTT Broker</h3>
-    <p>以下是连接到MQTT Broker服务器的必要信息。此账号由闸机、后台和控制端共用。</p>
-    <p>IP：124.70.155.130<br>端口：1883<br>用户名：user1<br>密码：helloworld</p>
-    <h2>主题索引</h2>
-    <p>下面是每个主题的详细说明。<span class="macro">红色字</span>是宏，需要用实际值替换（见其说明）。</p>
-    <table>
-        <tr>
-            <td>主题</td>
-            <td>说明</td>
-            <td>发布方</td>
-            <td>订阅方</td>
-        </tr>
-        <tr>
-            <td>rqst_val_acc_<span class="macro">machine_id</span></td> 
-            <td><a href="https://2020-iot-contest.github.io/topics/rqst_val_acc">链接</a></td>
-            <td>闸机</td>
-            <td>后台</td>
-        </tr>
-        <tr>
-            <td>rply_val_acc_<span class="macro">machine_id</span></td>
-            <td>
-                <a href="https://2020-iot-contest.github.io/topics/rply_val_acc">链接</a></td>
-            <td>后台</td>
-            <td>闸机</td>
-        </tr>
-        <tr>
-            <td>cmd_add_machine</td>
-            <td><a href="https://2020-iot-contest.github.io/topics/cmd_add_machine">链接</a></td>
-            <td>控制端</td>
-            <td>后台</td>
-        </tr>
-        <tr>
-            <td>cmd_add_tourist</td>
-            <td><a href="https://2020-iot-contest.github.io/topics/cmd_add_tourist">链接</a></td>
-            <td>控制端</td>
-            <td>后台</td>
-        </tr>
-        <tr>
-            <td>cmd_list_machine</td>
-            <td><a href="https://2020-iot-contest.github.io/topics/cmd_list_machine">链接</a></td>
-            <td>控制端</td>
-            <td>后台</td>
-        </tr>
-        <tr>
-            <td>cmd_list_tourist</td>
-            <td><a href="https://2020-iot-contest.github.io/topics/cmd_list_tourist">链接</a></td>
-            <td>控制端</td>
-            <td>后台</td>
-        </tr>
-        <tr>
-            <td>cmd_clear_machine</td>
-            <td><a href="https://2020-iot-contest.github.io/topics/cmd_clear_machine">链接</a></td>
-            <td>控制端</td>
-            <td>后台</td>
-        </tr>
-        <tr>
-            <td>cmd_clear_tourist</td>
-            <td><a href="https://2020-iot-contest.github.io/topics/cmd_clear_tourist">链接</a></td>
-            <td>控制端</td>
-            <td>后台</td>
-        </tr>
-        <tr>
-            <td>cmdret</td>
-            <td><a href="https://2020-iot-contest.github.io/topics/cmdret">链接</a></td>
-            <td>后台</td>
-            <td>控制端</td>
-        </tr>
-    </table>
-    <h2>后台错误代码</h2>
-    <p>当后台返回非零的错误代码时，代表后台发生了异常。<strong>此时，与错误代码一同返回的其他所有值均无效。</strong>错误代码的含义如下表所示：</p>
-    <table>
-        <tr>
-            <td>代码</td>
-            <td>错误名</td>
-            <td>含义</td>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td>无异常</td>
-            <td>无错误发生，其他值有效。</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>服务器异常</td>
-            <td>由于服务器自身原因无法处理请求。</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>不合法的消息</td>
-            <td>无法解析提供的JSON消息。</td>
-        </tr>
-    </table>
-    <p>例如，当后台返回如下信息时，应该视为发生错误，"tourist_id"和"status"的值均无效。</p>
-    <p>{ "tourist_id": "tEsTtOuRiSt", "status": "granted", "error_code": 1 }
-    </p>
-</body> 
-</html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://2020-iot-contest.github.io/index/" data-id="ckh66aokr0000cgxtg7cg2l1k" class="article-share-link">Share</a>
+      <a data-url="https://2020-iot-contest.github.io/topics/cmdret/" data-id="ckhaf9wyf0008y0xt4qzxehia" class="article-share-link">Share</a>
       
       
     </footer>
@@ -675,6 +565,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/./index.html/page/2/">2</a><a class="extend next" rel="next" href="/./index.html/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -705,6 +600,10 @@
       <ul>
         
           <li>
+            <a href="/topics/cmd_dump/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/topics/cmd_clear_tourist/">(no title)</a>
           </li>
         
@@ -718,10 +617,6 @@
         
           <li>
             <a href="/topics/cmd_list_machine/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/topics/rqst_val_acc/">(no title)</a>
           </li>
         
       </ul>
